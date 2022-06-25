@@ -12,6 +12,7 @@ function createWindow() {
 
   //브라우저창이 읽어 올 파일 위치
   win.loadFile("./index.html");
+  win.webContents.openDevTools();
 }
 
 app.on("ready", createWindow);
