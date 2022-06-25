@@ -1,4 +1,38 @@
 const { app, BrowserWindow } = require("electron");
+const { Menu, Tray } = require("electron");
+let tray;
+//트레이 아이콘
+function initTrayIconMenu(iconPath) {
+  let iconName = iconPath ? iconPath : "./icon2.png";
+  tray = new Tray(iconName);
+  const myMenu = Menu.buildFromTemplate([
+    {
+      label: "1번",
+      type: "normal",
+      checked: true,
+      click: () => {
+        console.log("1번클릭!");
+        initTrayIconMenu("./icon.png");
+      },
+    }, //checked는 기본선택입니다.
+    {
+      label: "2번",
+      type: "normal",
+      click: () => {
+        console.log("2번클릭!");
+      },
+    },
+    {
+      label: "3번",
+      type: "normal",
+      click: () => {
+        console.log("3번클릭!");
+      },
+    },
+  ]);
+  tray.setToolTip("트레이 아이콘!");
+  tray.setContextMenu(myMenu);
+}
 
 function createWindow() {
   // 브라우저 창을 생성
@@ -13,6 +47,7 @@ function createWindow() {
   //브라우저창이 읽어 올 파일 위치
   win.loadFile("./index.html");
   win.webContents.openDevTools();
+  initTrayIconMenu();
 }
 
 app.on("ready", createWindow);
