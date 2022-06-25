@@ -1,4 +1,4 @@
-import { strict as assert } from "assert";
+const assert = require("assert");
 
 describe("Array", function () {
   describe("#indexOf()", function () {
@@ -23,10 +23,10 @@ describe("Array", function () {
 //////////////// 여기까지 자체 테스트
 // 여기부터 외부 import해보기
 
-import { mochaTest } from "../src/index.js";
+const mochaTest = require("../src/mocha.js");
 
 describe("mochaTest", () => {
   it('mochaTest sholud String "mochaTest"', () => {
-    assert.equal(mochaTest(), "mochaTest");
+    assert.equal(mochaTest, "mochaTest");
   });
 });
