@@ -1,10 +1,18 @@
 {
-  "type": "module",
+  "name": "zzemalelectron",
+  "version": "1.0.0",
+  "description": "Hello World!",
+  "main": "main.js",
+  "author": "zzemal",
+  "license": "MIT",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "electron": "electron .",
+    "dev" : "nodemon --exec electron ."
   },
   "devDependencies": {
     "electron": "^19.0.6",
-    "mocha": "^10.0.0"
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.18"
   }
 }
