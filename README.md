@@ -1,3 +1,53 @@
 # ELECTRON (with. html,js)
 
 - electron을 통해 데스크탑용 앱을 만들고, 나만의 tray를 만들고 싶어서 시작한다.
+
+## build opiton
+
+```
+"build": {
+    "productName": "HelloElectron",
+    "appId": "com.electron.hello",
+    "asar": true,
+    "protocols" : {
+        "name" : "helloElectron",
+        "schemes" : ["helloelectron"]
+    },
+    "mac": {
+      "target": [
+        "default"
+      ],
+      "icon": "./icon3.png"
+    },
+    "dmg": {
+      "title": "HelloElectron",
+      "icon": "./icon3.png"
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "./icon3.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm",
+        "zip",
+        "tar.gz"
+      ],
+      "icon":  "./icon3.png"
+    },
+    "nsis":{
+      "oneClick" : false,
+      "allowToChangeInstallationDirectory" :true
+    },
+    "directories": {
+      "buildResources": "resources/installer/",
+      "output": "dist/",
+      "app": "."
+    }
+  }
+```

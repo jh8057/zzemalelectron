@@ -1,10 +1,15 @@
 const { app, BrowserWindow } = require("electron");
 const { Menu, Tray } = require("electron");
+const path = require("path");
+
+let imgPath = process.env.DEV
+  ? "assets/icons.png"
+  : path.join(process.resourcesPath, "icons.png");
 let tray;
+
 //트레이 아이콘
-function initTrayIconMenu(iconPath) {
-  let iconName = iconPath ? iconPath : "./icon2.png";
-  tray = new Tray(iconName);
+function initTrayIconMenu() {
+  tray = new Tray(imgPath);
   const myMenu = Menu.buildFromTemplate([
     {
       label: "1번",
@@ -12,7 +17,7 @@ function initTrayIconMenu(iconPath) {
       checked: true,
       click: () => {
         console.log("1번클릭!");
-        initTrayIconMenu("./icon.png");
+        initTrayIconMenu();
       },
     }, //checked는 기본선택입니다.
     {

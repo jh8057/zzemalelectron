@@ -8,11 +8,32 @@
   "scripts": {
     "test": "mocha",
     "electron": "electron .",
-    "dev" : "nodemon --exec electron ."
+    "dev": "nodemon --exec electron .",
+    "build:mac" : "electron-builder --mac",
+    "build:win64" : "electron-builder --win --x64"
   },
   "devDependencies": {
     "electron": "^19.0.6",
     "mocha": "^10.0.0",
-    "nodemon": "^2.0.18"
+    "nodemon": "^2.0.18",
+    "electron-is-dev": "latest",
+    "electron-builder": "^23.1.0"
+  },
+  "build": {
+    "mac": {
+      "target": [
+        "default"
+      ],
+      "icon": "./assets/icon.png",
+      "extraFiles": [
+        {
+            "from": "assets",
+            "to": "resources",
+            "filter": [
+                "**/*"
+            ]
+        }
+    ]
+    }
   }
 }
