@@ -2,6 +2,11 @@
 
 - electron을 통해 데스크탑용 앱을 만들고, 나만의 tray를 만들고 싶어서 시작한다.
 
+## TODO
+
+1. tray
+2. splite3
+
 ## build opiton
 
 - 이미지는 build할 extrafile로 명시해줘야되고, 해당 경로를 통해 접근을 해야된다.

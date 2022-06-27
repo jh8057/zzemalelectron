@@ -10,7 +10,8 @@
     "electron": "electron .",
     "dev": "cross-env NODE_ENV=development nodemon --exec electron .",
     "build:mac": "electron-builder --mac",
-    "build:win64": "electron-builder --win --x64"
+    "build:win64": "electron-builder --win --x64",
+    "scss" : "sass --watch css/input.scss css/output.css"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
@@ -36,5 +37,8 @@
         }
       ]
     }
+  },
+  "dependencies": {
+    "sass": "^1.53.0"
   }
 }
