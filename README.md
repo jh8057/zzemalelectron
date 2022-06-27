@@ -7,6 +7,10 @@
 1. tray
 2. splite3
 
+## tray
+
+- [reference site](https://medium.com/@nahoc/lets-build-a-system-tray-cryptocurrency-tracker-for-mac-using-electron-part-1-7888747891b)
+
 ## build opiton
 
 - 이미지는 build할 extrafile로 명시해줘야되고, 해당 경로를 통해 접근을 해야된다.
