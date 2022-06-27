@@ -8,16 +8,17 @@
   "scripts": {
     "test": "mocha",
     "electron": "electron .",
-    "dev": "nodemon --exec electron .",
-    "build:mac" : "electron-builder --mac",
-    "build:win64" : "electron-builder --win --x64"
+    "dev": "cross-env NODE_ENV=development nodemon --exec electron .",
+    "build:mac": "electron-builder --mac",
+    "build:win64": "electron-builder --win --x64"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "electron": "^19.0.6",
-    "mocha": "^10.0.0",
-    "nodemon": "^2.0.18",
+    "electron-builder": "^23.1.0",
     "electron-is-dev": "latest",
-    "electron-builder": "^23.1.0"
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.18"
   },
   "build": {
     "mac": {
@@ -27,13 +28,13 @@
       "icon": "./assets/icon.png",
       "extraFiles": [
         {
-            "from": "assets",
-            "to": "resources",
-            "filter": [
-                "**/*"
-            ]
+          "from": "assets",
+          "to": "resources",
+          "filter": [
+            "**/*"
+          ]
         }
-    ]
+      ]
     }
   }
 }

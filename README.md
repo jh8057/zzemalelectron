@@ -4,6 +4,8 @@
 
 ## build opiton
 
+- 이미지는 build할 extrafile로 명시해줘야되고, 해당 경로를 통해 접근을 해야된다.
+
 ```
 "build": {
     "productName": "HelloElectron",

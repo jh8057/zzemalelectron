@@ -2,9 +2,10 @@ const { app, BrowserWindow } = require("electron");
 const { Menu, Tray } = require("electron");
 const path = require("path");
 
-let imgPath = process.env.DEV
-  ? "assets/icons.png"
-  : path.join(process.resourcesPath, "icons.png");
+let imgPath =
+  process.env.NODE_ENV === "development"
+    ? "assets/icons.png"
+    : path.join(process.resourcesPath, "icons.png");
 let tray;
 
 //트레이 아이콘
