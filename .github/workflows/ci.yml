@@ -12,7 +12,7 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       - name: Send GitHub trigger payload to Slack Workflow Builder
-        id: slack
+        id: slack2
         uses: slackapi/slack-github-action@v1.19.0
         with:
           payload: |
