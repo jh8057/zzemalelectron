@@ -15,6 +15,13 @@
 
 - [npm ci](https://mygumi.tistory.com/409)
 
+#### slack
+
+1. make Environments in github
+2. add secret value
+3. install 'incoming-webhook' app on slack
+4. link on channel
+
 ## build opiton
 
 - 이미지는 build할 extrafile로 명시해줘야되고, 해당 경로를 통해 접근을 해야된다.

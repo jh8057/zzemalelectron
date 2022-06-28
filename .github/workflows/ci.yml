@@ -1,13 +1,16 @@
 name: github-action-for-test
 on: [push]
 jobs:
-  echo-hello:
+  slack-message:
     runs-on: ubuntu-latest
     steps:
-      - name: Alpine Probe & Echo
-        uses: Kaizhe/alpine-echo@v1.0.0
+      - name: slack-send
+        id: slack
+        uses: slackapi/slack-github-action@v1.19.0
         with:
-          message: "hello word"
+          slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_URL }}
   check-version:
     runs-on: ubuntu-latest
     steps:
