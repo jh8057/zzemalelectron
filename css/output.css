@@ -1,9 +1,17 @@
 body {
-  padding: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
 }
 
 h1 {
-  color: burlywood;
+  color: rgb(92, 52, 0);
+  background-color: rgb(255, 216, 133);
+}
+
+.mainBox {
+  padding: 20px;
 }
 
 /*# sourceMappingURL=output.css.map */
