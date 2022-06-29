@@ -5,4 +5,5 @@ function sendMessage() {
 function linkTest() {
   return "linked";
 }
-module.exports = { linkTest };
+
+// module.exports = { linkTest };

@@ -11,6 +11,11 @@
 
 - [reference site](https://medium.com/@nahoc/lets-build-a-system-tray-cryptocurrency-tracker-for-mac-using-electron-part-1-7888747891b)
 
+## electron
+
+- 구현할때 노드부분이랑 클라이언트 부분이랑 분리해서 사용해야된다.
+- 따로 서버구현이 안되있어서 클라이언트에서 노드 변수를 사용하면 에러난다
+
 ## github action
 
 - [npm ci](https://mygumi.tistory.com/409)
