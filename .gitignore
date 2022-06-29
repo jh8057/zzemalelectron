@@ -3,4 +3,4 @@ dist
 .DS_Store
 
 config
-slackSend.js
+# slackSend.js
