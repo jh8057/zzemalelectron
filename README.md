@@ -27,6 +27,25 @@
 3. install 'incoming-webhook' app on slack
 4. link on channel
 
+#### slack send msg
+
+```js
+async function sendSlackMessage(msg, url = "") {
+  const headers = {
+    "Content-Type": "application/x-www-form-urlencoded",
+  };
+  try {
+    await fetch(url, {
+      method: "POST",
+      body: JSON.stringify({ text: msg }),
+      headers: headers,
+    });
+  } catch (err) {
+    console.warn(err);
+  }
+}
+```
+
 ## build opiton
 
 - 이미지는 build할 extrafile로 명시해줘야되고, 해당 경로를 통해 접근을 해야된다.
