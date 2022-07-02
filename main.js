@@ -40,40 +40,16 @@ function initTrayIconMenu() {
   tray.on("click", function (event) {
     toggleWindow();
   });
-  // const myMenu = Menu.buildFromTemplate([
-  //   {
-  //     label: "1번",
-  //     type: "normal",
-  //     checked: true,
-  //     click: () => {
-  //       console.log("1번클릭!");
-  //       initTrayIconMenu();
-  //     },
-  //   }, //checked는 기본선택입니다.
-  //   {
-  //     label: "2번",
-  //     type: "normal",
-  //     click: () => {
-  //       console.log("2번클릭!");
-  //     },
-  //   },
-  //   {
-  //     label: "3번",
-  //     type: "normal",
-  //     click: () => {
-  //       console.log("3번클릭!");
-  //     },
-  //   },
-  // ]);
-  // tray.setToolTip("트레이 아이콘!");
-  // tray.setContextMenu(myMenu);
+  tray.on("right-click", function () {
+    app.exit();
+  });
 }
 
 function createWindow() {
   // 브라우저 창을 생성
   window = new BrowserWindow({
     width: 320,
-    height: 450,
+    height: 150,
 
     webPreferences: {
       // nodeIntegration: true,
@@ -104,7 +80,3 @@ app.on("ready", () => {
   createWindow();
   initTrayIconMenu();
 });
-
-// ipcMain.on("show-window", () => {
-//   showWindow();
-// });

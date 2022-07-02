@@ -9,16 +9,18 @@
 </head>
 <body>
     <main class="mainBox">
-        <h1>ZZEMAL</h1>
-        <form>
-            <input id="mainInput" type="text" name="mainInput" maxlength="50" autofocus="true" />
-            <button onclick="sendSlackMessage()">slack</button>
-        </form>
-        <div class="selects">
-            <span class="hour"></span>
-            <span class="minute"></span>
-            <button onclick="sendSlackSchedule()">slack</button>
-        </div>
+        <article class="slack">
+            <h1>ZZEMAL</h1>
+            <div>
+                <input id="mainInput" type="text" name="mainInput" maxlength="50" autofocus="true" />
+                <button onclick="sendSlackMessage()">slack</button>
+            </div>
+            <!-- <div class="selects">
+                <span class="hour"></span>
+                <span class="minute"></span>
+                <button onclick="sendSlackWebAPI()">schedule</button>
+            </div> -->
+        </article>
     </main>
 </body>
 </html>

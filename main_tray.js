@@ -73,7 +73,7 @@ function createWindow() {
   // 브라우저 창을 생성
   window = new BrowserWindow({
     width: 320,
-    height: 450,
+    height: 150,
 
     webPreferences: {
       // nodeIntegration: true,
