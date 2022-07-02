@@ -8,13 +8,17 @@
     <script defer type="text/javascript" src="./src/slackSend.js"></script>
 </head>
 <body>
-    <article class="mainBox">
+    <main class="mainBox">
         <h1>ZZEMAL</h1>
-        <button onclick="alert('hello')">hello</button>
-        <button onclick="sendMessage()">sendMessage</button>
-        <button onclick="sendSlackMessage()">slack</button>
-
-        <input id="mainInput" type="text" name="mainInput" maxlength="50" />
-    </article>
+        <form>
+            <input id="mainInput" type="text" name="mainInput" maxlength="50" autofocus="true" />
+            <button onclick="sendSlackMessage()">slack</button>
+        </form>
+        <div class="selects">
+            <span class="hour"></span>
+            <span class="minute"></span>
+            <button onclick="sendSlackSchedule()">slack</button>
+        </div>
+    </main>
 </body>
 </html>

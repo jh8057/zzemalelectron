@@ -14,4 +14,9 @@ h1 {
   padding: 20px;
 }
 
+select {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
 /*# sourceMappingURL=output.css.map */
