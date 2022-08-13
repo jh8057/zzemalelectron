@@ -10,11 +10,38 @@
 <body>
     <main class="mainBox">
         <article class="slack">
-            <h1>ZZEMAL</h1>
-            <div>
-                <input id="mainInput" type="text" name="mainInput" maxlength="50" autofocus="true" />
-                <button onclick="sendSlackMessage()">slack</button>
-            </div>
+            <header>
+                <h1>ZZEMAL</h1>
+                <nav>
+                    <ul>
+                        <li onclick="showSlack()">slack</li>
+                        <li onclick="showBit()">bit</li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="slackSection">
+                <h1>Input Slack Msg!</h1>
+                <div>
+                    <input id="mainInput" type="text" name="mainInput" maxlength="50" autofocus="true" />
+                    <button onclick="sendSlackMessage()">slack</button>
+                </div>
+            </section>
+            <section class="bitSection">
+                
+                <article class="bitSection__top">
+                    <h1>BIT!</h1>
+                    <button onclick="getBitDate()">get</button>
+                    <div class="wrapper">
+                        <div class="circle"></div>
+                    </div>
+                    <input />
+                </article>
+                <ul>
+                    <li>Price : <span class="bitPrice">0</span></li>
+                    <li>changeRate : <span class="bitChangeRate">0</span></li>
+                </ul>
+                
+            </section>
             <!-- <div class="selects">
                 <span class="hour"></span>
                 <span class="minute"></span>

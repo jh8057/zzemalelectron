@@ -1,3 +1,39 @@
+function showSlack() {
+  let slackSection = document.querySelector(".slackSection");
+  let bitSection = document.querySelector(".bitSection");
+  slackSection.style.display = "block";
+  bitSection.style.display = "none";
+}
+
+function showBit() {
+  let slackSection = document.querySelector(".slackSection");
+  let bitSection = document.querySelector(".bitSection");
+  slackSection.style.display = "none";
+  bitSection.style.display = "block";
+}
+
+async function getBitDate() {
+  let bitPrice = document.querySelector(".bitPrice");
+  let bitChangeRate = document.querySelector(".bitChangeRate");
+  let circle = document.querySelector(".circle");
+  fetch(
+    "https://crix-api-endpoint.upbit.com/v1/crix/candles/days/?code=CRIX.UPBIT.KRW-ETC"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      let { tradePrice, changeRate, change } = data[0];
+
+      bitPrice.innerText = parseInt(tradePrice).toLocaleString("en");
+      bitChangeRate.innerText = Number(changeRate * 100).toFixed(2) + "%";
+
+      if (change === "RISE") {
+        circle.style.backgroundColor = "red";
+      } else {
+        circle.style.backgroundColor = "blue";
+      }
+    });
+}
 // function settingClock() {
 //   //hour
 //   let targetBodyH = document.querySelector(".hour");
