@@ -24,6 +24,14 @@ async function getBitDate() {
       console.log(data);
       let { tradePrice, changeRate, change } = data[0];
 
+      //compare
+      if (
+        bitChangeRate.innerText !== 0 &&
+        Math.abs(bitChangeRate.innerText.slice(0, 4) - changeRate) > 1
+      ) {
+        alert("LET GO!");
+      }
+
       bitPrice.innerText = parseInt(tradePrice).toLocaleString("en");
       bitChangeRate.innerText = Number(changeRate * 100).toFixed(2) + "%";
 
@@ -34,6 +42,8 @@ async function getBitDate() {
       }
     });
 }
+getBitDate();
+setInterval(getBitDate, 1000 * 60 * 20);
 // function settingClock() {
 //   //hour
 //   let targetBodyH = document.querySelector(".hour");
