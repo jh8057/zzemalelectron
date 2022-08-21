@@ -27,7 +27,7 @@ async function getBitDate() {
       //compare
       if (
         bitChangeRate.innerText !== 0 &&
-        Math.abs(bitChangeRate.innerText.slice(0, 4) - changeRate) > 1
+        Math.abs(bitChangeRate.innerText.slice(0, 4) - changeRate * 100) > 1
       ) {
         alert("LET GO!");
       }
