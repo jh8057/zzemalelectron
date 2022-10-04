@@ -44,6 +44,7 @@ async function getBitDate() {
 }
 getBitDate();
 setInterval(getBitDate, 1000 * 60 * 20);
+
 // function settingClock() {
 //   //hour
 //   let targetBodyH = document.querySelector(".hour");
@@ -72,3 +73,5 @@ setInterval(getBitDate, 1000 * 60 * 20);
 // }
 
 // settingClock();
+
+function setCookie() {}
