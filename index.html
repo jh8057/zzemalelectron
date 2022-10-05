@@ -16,6 +16,7 @@
                     <ul>
                         <li onclick="showSlack()">slack</li>
                         <li onclick="showBit()">bit</li>
+                        <li onclick="showTodo()">todo</li>
                     </ul>
                 </nav>
             </header>
@@ -41,6 +42,15 @@
                     <li>changeRate : <span class="bitChangeRate"></span></li>
                 </ul>
                 
+            </section>
+            <section class="todoSection">
+                <div>
+                    <input id="todoInput" type="text" name="todoInput" maxlength="100" autofocus="true" />
+                    <button onclick="addTodo()">add</button>
+                </div>
+                <ul id="todoList">
+                    <li>TODO LIST</li>
+                </ul>
             </section>
             <!-- <div class="selects">
                 <span class="hour"></span>

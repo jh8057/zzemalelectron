@@ -82,4 +82,15 @@ nav ul li {
   gap: 5px;
 }
 
+.todoSection {
+  display: none;
+}
+.todoSection ul {
+  padding: 0;
+  list-style: none;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5px;
+}
+
 /*# sourceMappingURL=output.css.map */

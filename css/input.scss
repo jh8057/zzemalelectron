@@ -84,7 +84,18 @@ nav{
   gap: 5px;
 }
 
-.slackSection{
-  margin-top: 30px;
-  padding: 30px
+// .slackSection{
+//   margin-top: 30px;
+//   padding: 30px
+// }
+
+.todoSection{
+  display: none;
+  ul{
+    padding: 0;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    margin: 5px;
+  }
 }

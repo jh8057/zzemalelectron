@@ -1,15 +1,28 @@
 function showSlack() {
   let slackSection = document.querySelector(".slackSection");
   let bitSection = document.querySelector(".bitSection");
+  let todoSection = document.querySelector(".todoSection");
   slackSection.style.display = "block";
   bitSection.style.display = "none";
+  todoSection.style.display = "none";
 }
 
 function showBit() {
   let slackSection = document.querySelector(".slackSection");
   let bitSection = document.querySelector(".bitSection");
+  let todoSection = document.querySelector(".todoSection");
   slackSection.style.display = "none";
   bitSection.style.display = "block";
+  todoSection.style.display = "none";
+}
+
+function showTodo() {
+  let slackSection = document.querySelector(".slackSection");
+  let bitSection = document.querySelector(".bitSection");
+  let todoSection = document.querySelector(".todoSection");
+  slackSection.style.display = "none";
+  bitSection.style.display = "none";
+  todoSection.style.display = "block";
 }
 
 async function getBitDate() {
@@ -74,4 +87,19 @@ setInterval(getBitDate, 1000 * 60 * 20);
 
 // settingClock();
 
-function setCookie() {}
+function setCookie() {
+  console.log("cookie", document.cookie);
+}
+
+function addTodo() {
+  const inputValue = document.getElementById("todoInput").value;
+  if (!inputValue) {
+    alert("Input Data~!");
+    return;
+  }
+  const todoList = document.getElementById("todoList");
+  //child
+  const newLi = document.createElement("li");
+  newLi.innerText = inputValue;
+  todoList.appendChild(newLi);
+}
