@@ -87,16 +87,19 @@ setInterval(getBitDate, 1000 * 60 * 20);
 
 // settingClock();
 
-function setCookie() {
-  console.log("cookie", document.cookie);
+function setLocalStorage(key, value) {
+  window.localStorage.setItem(key, value);
 }
-
+let count = 0;
 function addTodo() {
   const inputValue = document.getElementById("todoInput").value;
   if (!inputValue) {
     alert("Input Data~!");
     return;
   }
+  count++;
+  this.setLocalStorage(`test_${count}`, inputValue);
+
   const todoList = document.getElementById("todoList");
   //child
   const newLi = document.createElement("li");
