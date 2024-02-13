@@ -1,14 +1,16 @@
 const { app, BrowserWindow, ipcMain, webContents } = require("electron");
 const path = require("path");
 
-const appleCount = require("./src/electronMain/appleCount");
+// const appleCount = require("./src/electronMain/appleCount");
+const devTool = require("./src/electronMain/devTool");
 
+let win;
 const createWindow = () => {
   // 브라우저 창 설정
   const options = {
     // 창 크기
-    width: 320,
-    height: 240,
+    width: 400,
+    height: 400,
 
     // 전처리
     webPreferences: {
@@ -18,17 +20,19 @@ const createWindow = () => {
     },
   };
   // 창을 여러개 띄울 수 있다
-  const first = new BrowserWindow(options);
-  const second = new BrowserWindow(options);
+  win = new BrowserWindow(options);
+  // const second = new BrowserWindow(options);
 
-  first.loadFile("index.html");
-  second.loadFile("index.html");
+  win.loadFile("index.html");
+  // second.loadFile("index.html");
 };
 
 app.whenReady().then(() => {
   createWindow();
 
-  appleCount();
+  /** src */
+  // appleCount();
+  devTool(win);
 
   // 창 띄우기
   app.on("activate", () => {
