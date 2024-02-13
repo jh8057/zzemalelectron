@@ -1,37 +1,37 @@
-name: github-action-for-test
-on: [push]
-jobs:
-  slack-message:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Send GitHub Action trigger data to Slack workflow
-        id: slack
-        uses: slackapi/slack-github-action@v1.19.0
-        with:
-          payload: |
-            {
-              "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-                  }
-                }
-              ]
-            }
-          slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-  check-version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.3.0
-        with:
-          node-version: 16.x
-          cache: "npm"
-      - run: npm ci
-      - run: npm test
+# name: github-action-for-test
+# on: [push]
+# jobs:
+#   slack-message:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Send GitHub Action trigger data to Slack workflow
+#         id: slack
+#         uses: slackapi/slack-github-action@v1.19.0
+#         with:
+#           payload: |
+#             {
+#               "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+#               "blocks": [
+#                 {
+#                   "type": "section",
+#                   "text": {
+#                     "type": "mrkdwn",
+#                     "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+#                   }
+#                 }
+#               ]
+#             }
+#           slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+#         env:
+#           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#   check-version:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Setup Node.js environment
+#         uses: actions/setup-node@v3.3.0
+#         with:
+#           node-version: 16.x
+#           cache: "npm"
+#       - run: npm ci
+#       - run: npm test
